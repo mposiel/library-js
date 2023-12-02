@@ -34,7 +34,6 @@ submitBtn.addEventListener("click", () => {
     if(title.value === myLibrary[i].title) {
         alert("You cannot add two books of the same title!");
         title.value = "";
-
         return;
     }
   }
