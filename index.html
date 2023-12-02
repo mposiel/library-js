@@ -1,12 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">Library</div>
+        <div class="add-new">
+          <button class="add-new-btn">Add New</button>
+        </div>
+      </div>
+      <div class="books"></div>
+    </div>
+    <div class="add-book-popup">
+      <div class="form">
+        <button class="close-btn">X</button>
+
+        Add new book
+
+        <div class="input-box">
+          <label>Title:</label>
+          <input class="input" id="title" type="text" />
+        </div>
+        <div class="input-box">
+          <label>Author:</label>
+          <input class="input" id="author" type="text" />
+        </div>
+        <div class="input-box">
+          <label >Pages:</label>
+          <input class="input" id="pages" type="number" />
+        </div>
+        <div class="input-box">
+          <label>Read:</label>
+          <input class="checkbox" id="read" type="checkbox" />
+        </div>
+        <div class="submit">
+          <button class="submit-btn">Submit</button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
