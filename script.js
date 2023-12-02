@@ -14,26 +14,39 @@ const popup = document.querySelector(".add-book-popup");
 
 const addBookBtn = document.querySelector(".add-new-btn");
 addBookBtn.addEventListener("click", () => {
-    popup.style.visibility = "visible";
+  popup.style.visibility = "visible";
 });
 
 const closeBtn = document.querySelector(".close-btn");
 closeBtn.addEventListener("click", () => {
-    popup.style.visibility = "hidden";
+  popup.style.visibility = "hidden";
 });
 
 const submitBtn = document.querySelector(".submit-btn");
 
-submitBtn.addEventListener('click', () => {
-    const title = document.querySelector("#title");
-    const author = document.querySelector("#author");
-    const pages = document.querySelector("#pages");
-    const read = document.querySelector("#read");
+submitBtn.addEventListener("click", () => {
+  const title = document.querySelector("#title");
+  const author = document.querySelector("#author");
+  const pages = document.querySelector("#pages");
+  const read = document.querySelector("#read");
 
-    addBookToLibrary(title.value, author.value,pages.value,read.checked);
-    popup.style.visibility = "hidden";
-    displayLibrary();
-})
+  for (let i = 0; i < myLibrary.length; i++) {
+    if(title.value === myLibrary[i].title) {
+        alert("You cannot add two books of the same title!");
+        title.value = "";
+
+        return;
+    }
+  }
+  addBookToLibrary(title.value, author.value, pages.value, read.checked);
+  popup.style.visibility = "hidden";
+  title.value = "";
+  author.value = "";
+  pages.value = "";
+  read.checked = false;
+
+  displayLibrary();
+});
 
 function displayLibrary() {
   const booksSection = document.querySelector(".books");
@@ -75,9 +88,5 @@ function displayLibrary() {
     }
   }
 }
-
-addBookToLibrary("Harry", "Rowling", 566, true);
-addBookToLibrary("HarryP", "asRowling", 56564, false);
-addBookToLibrary("HarrsdfgsdfgyP", "asRowling", 56564, false);
 
 displayLibrary();
