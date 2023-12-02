@@ -31,10 +31,10 @@ submitBtn.addEventListener("click", () => {
   const read = document.querySelector("#read");
 
   for (let i = 0; i < myLibrary.length; i++) {
-    if(title.value === myLibrary[i].title) {
-        alert("You cannot add two books of the same title!");
-        title.value = "";
-        return;
+    if (title.value === myLibrary[i].title) {
+      alert("You cannot add two books of the same title!");
+      title.value = "";
+      return;
     }
   }
   addBookToLibrary(title.value, author.value, pages.value, read.checked);
